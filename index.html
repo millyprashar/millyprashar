@@ -64,20 +64,23 @@ var function_objects = [
       }
         $('body').terminal({
             help: function(){
-                this.echo(`let me introduce myself, what would you like to know about?\nlinkedin\ninstagram\nresume\nphotography`); 
+                this.echo("let me introduce myself, what would you like to know about?\nlinkedin\ninstagram\nresume\nphotography\nmy favorite song : enter 'song'"); 
             },
             linkedin: function(){
                 this.echo("let's connect! https://www.linkedin.com/in/millyprashar/");
             },
             instagram: function(){
-                this.echo('check me out on https://www.instagram.com/millyprashar/');
+                this.echo("check me out on https://www.instagram.com/millyprashar/");
             },
             resume: function(){
-                this.echo('my limited experiences...')
+                this.echo("my limited experiences...")
             },
             photography: function(){
-                this.echo('my gallery')
-            }
+                this.echo("my gallery")
+            },
+            song: function(){
+              this.echo("https://www.youtube.com/watch?v=ewOPQZZn4SY")
+            },
         },
         {
             greetings: `enter help and watch the magic happen`,
