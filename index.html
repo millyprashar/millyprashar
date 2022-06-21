@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
+</head>
+<body>
+    <div id ="top-bar">
+        <a class="top-bar-link">resume</a>
+        <a class="top-bar-link">faq</a>
+    </div>
+    <div>
+        <h1>millyprashar.com</h1>
+    </div>
+    <script type="module">
+
+var function_objects = [
+        {
+          'title':'help',
+          'options':[],
+          'description': 'displays list of all commands'
+        },
+        {
+          'title': 'linkedin',
+          'options': [],
+          'description': 'link to my linkedin profile'
+        },
+        {
+          'title':'instagram',
+          'options':[],
+          'description': 'link to my instagram profile'
+        },
+        {
+          'title':'resume',
+          'options':[],
+          'description': 'link to my resume'
+        },
+      ];
+
+      function pretty_print(fobj) {
+        var return_string = '';
+
+        // // formattting just the name of the function
+        return_string += `[[b;red;<BACKGROUND>]${fobj.title}] `;
+
+        // formatting arguments
+        var option_string = '';
+        for (var i = 0; i < fobj.options.length; i++){
+          var op = fobj.options[i];
+          return_string += `[[bu;<COLOR>;<BACKGROUND>]${op}] `;
+        }
+
+        // formatting description
+        return_string += '- '
+        return_string += fobj.description;
+
+        return return_string;
+      }
+
+      var funcs = [];
+      for (var i = 0; i < function_objects.length; i++){
+        funcs.push(pretty_print(function_objects[i]))
+      }
+        $('body').terminal({
+            help: function(){
+                this.echo(`let me introduce myself, what would you like to know about?\nlinkedin\ninstagram\nresume\nphotography`); 
+            },
+            linkedin: function(){
+                this.echo("let's connect! https://www.linkedin.com/in/millyprashar/");
+            },
+            instagram: function(){
+                this.echo('check me out on https://www.instagram.com/millyprashar/');
+            },
+            resume: function(){
+                this.echo('my limited experiences...')
+            },
+            photography: function(){
+                this.echo('my gallery')
+            }
+        },
+        {
+            greetings: `enter help and watch the magic happen`,
+            prompt: '>>',
+        });
+    </script>
+</body>
+</html>
