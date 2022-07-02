@@ -1,0 +1,21 @@
+body{
+    background-color: #ECECEC;
+}
+.entry
+{
+    text-align: center;
+    color: #F4CDC5;
+    font-family: comic sans ms
+}
+
+.volume
+{
+    text-align: left;
+    color: #753A2E;
+}
+
+.number
+{
+    text-align: right;
+    color: #753A2E;
+}
