@@ -4,15 +4,16 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
+    <link rel="stylesheet" href="main.css">
+
 </head>
 <body>
-    <div id ="top-bar">
+    <div id = "top-bar">
         <a class="top-bar-link">resume</a>
         <a class="top-bar-link">faq</a>
     </div>
-    <div>
+    <div id = "header">
         <h1>millyprashar.com</h1>
-    </div>
     <script type="module">
 
 var function_objects = [
@@ -62,6 +63,7 @@ var function_objects = [
       for (var i = 0; i < function_objects.length; i++){
         funcs.push(pretty_print(function_objects[i]))
       }
+      
         $('body').terminal({
             help: function(){
                 this.echo("let me introduce myself, what would you like to know about?\nlinkedin\ninstagram\nresume\nphotography\nmy favorite song : enter 'song'"); 

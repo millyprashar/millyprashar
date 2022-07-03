@@ -5,17 +5,18 @@ body{
 {
     text-align: center;
     color: #F4CDC5;
-    font-family: comic sans ms
+    font-family: comic sans ms;
 }
 
 .volume
 {
-    text-align: left;
+    float: left;
+    pd-left: 10;
     color: #753A2E;
 }
 
 .number
 {
-    text-align: right;
+    float: right;
     color: #753A2E;
 }
