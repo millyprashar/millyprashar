@@ -1,9 +1,9 @@
 body{
 	margin: 0;
-    color: black;
+    color: #413D3F;
 	height: 100%;
 	font-family: 'Roboto Mono', monospace;
-	background-color: white;
+	background-color: #DDD5C5;
 	font-size: 15.6px;
 }
 
@@ -20,12 +20,48 @@ body{
 .top-bar-link:hover
 {
     text-decoration-line: underline;
-    color: purple;
+    color: blue;
+}
+
+.top-bar-link
+{
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #413D3F;
+    text-decoration: none;
+
 }
 
 #header
 {
     text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+}
+
+#terminal-box {
+    z-index: 1000;
+    background-color: #F4F1EA;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 50%;
+    border: 1.5px solid #413D3F;
+    overflow-y: auto;
+    font-size: 20px;
+    highlight-color: red;
+  }
+
+.terminal {
+    --color: #413D3F;
+    --size: 1.4;
+    --background: transparent;
+  }
+
+  .blue{
+    color: blue;
+  }
+  .blue::selection {
+	color: white;
+	background-color: blue;
 }

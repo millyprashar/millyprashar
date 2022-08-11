@@ -8,34 +8,45 @@
 
 </head>
 <body>
+  
+</div>
     <div id = "top-bar">
-        <a class="top-bar-link">resume</a>
-        <a class="top-bar-link">faq</a>
+        <a href="https://www.linkedin.com/in/millyprashar/" target="_blank" class="top-bar-link">linkedin</a>
+        <a href="https://github.com/millyprashar" target="_blank" class="top-bar-link">github</a>
     </div>
     <div id = "header">
         <h1>millyprashar.com</h1>
+    </div>
+
+    <div id="terminal-box"> </div>
     <script type="module">
+
 
 var function_objects = [
         {
           'title':'help',
           'options':[],
-          'description': 'displays list of all commands'
+          'description':'displays list of all commands'
         },
         {
-          'title': 'linkedin',
-          'options': [],
-          'description': 'link to my linkedin profile'
+          'title':'im',
+          'options':['name'],
+          'description':'introduce yourself to the site' 
         },
         {
-          'title':'instagram',
+          'title':'aboutme',
           'options':[],
-          'description': 'link to my instagram profile'
+          'description': 'displays an introduction of myself'
         },
         {
-          'title':'resume',
+          'title':'contactme',
           'options':[],
-          'description': 'link to my resume'
+          'description': 'displays methods to get in touch with me'
+        },
+        {
+          'title':'song',
+          'options':[],
+          'description': 'redirects you to have a dance party of your own to me favorite song'
         },
       ];
 
@@ -43,18 +54,18 @@ var function_objects = [
         var return_string = '';
 
         // // formattting just the name of the function
-        return_string += `[[b;red;<BACKGROUND>]${fobj.title}] `;
+        return_string += `[[b;#C12F2F;<BACKGROUND>]${fobj.title}] `;
 
         // formatting arguments
         var option_string = '';
         for (var i = 0; i < fobj.options.length; i++){
           var op = fobj.options[i];
-          return_string += `[[bu;<COLOR>;<BACKGROUND>]${op}] `;
+          return_string += `[[bu;blue;<BACKGROUND>]${op}] `;
         }
 
         // formatting description
         return_string += '- '
-        return_string += fobj.description;
+        return_string += `[[;<COLOR>;<BACKGROUND>]${fobj.description}] `;
 
         return return_string;
       }
@@ -63,31 +74,32 @@ var function_objects = [
       for (var i = 0; i < function_objects.length; i++){
         funcs.push(pretty_print(function_objects[i]))
       }
-      
-        $('body').terminal({
-            help: function(){
-                this.echo("let me introduce myself, what would you like to know about?\nlinkedin\ninstagram\nresume\nphotography\nmy favorite song : enter 'song'"); 
-            },
-            linkedin: function(){
-                this.echo("let's connect! https://www.linkedin.com/in/millyprashar/");
-            },
-            instagram: function(){
-                this.echo("check me out on https://www.instagram.com/millyprashar/");
-            },
-            resume: function(){
-                this.echo("my limited experiences...")
-            },
-            photography: function(){
-                this.echo("my gallery")
-            },
-            song: function(){
-              this.echo("https://www.youtube.com/watch?v=ewOPQZZn4SY")
-            },
+
+      let test = $('#terminal-box').terminal({
+        help: function(){
+          this.echo('\n' + 'Welcome welcome! Here are a list of all [[b;#C12F2F;<BACKGROUND>]commands], [[bu;blue;<BACKGROUND>]options], and [[;<COLOR>;<BACKGROUND>]descriptions]!' + '\n' + '\n> ' + funcs.join('\n> ') + '\n');
         },
+        im: function(name){
+          this.echo(`Hello, ${name}. Welcome to this terminal, feel free to explore!\n`);
+        },
+        aboutme: function(){
+          this.echo("I'm currently studying computer science and engineering at the University of California, Los Angeles\n" +
+          "and and seeking SWE internships for the summer of 2023. I'm particularly interested in front end development and\n" +
+          "artifical intelligence and hope to work in a collaborative enviroment where I can be both challenged and motivated!\n" +
+          "In my free time I find myself working and reading out of various coffee shops, practicing film photography, being active,\n" +
+          "and eating at new resturants to review for my food blog @missantonego on instagram :)");
+        },
+        contactme: function(){
+          this.echo('Email me at millyprashar@g.ucla.edu\n');
+        },
+        song: function(){
+          this.echo("[[i;<COLOR>;<BACKGROUND>]https://www.youtube.com/watch?v=ewOPQZZn4SY]\n");
+        },
+      },
         {
-            greetings: `enter help and watch the magic happen`,
-            prompt: '>>',
+          greetings: `Enter [[b;#C12F2F;<BACKGROUND>;]help] and watch the magic happen`,
+          prompt: '>>',
         });
-    </script>
+  </script>
 </body>
 </html>
