@@ -57,11 +57,3 @@ body{
     --size: 1.4;
     --background: transparent;
   }
-
-  .blue{
-    color: blue;
-  }
-  .blue::selection {
-	color: white;
-	background-color: blue;
-}
